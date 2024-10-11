@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ccg的个人网站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+        .nav-link {
+            color: #4a4a4a;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4a4a4a;
+            font-weight: bold;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
+        }
+        .card-title {
+            color: #4a4a4a;
+            font-weight: bold;
+        }
+        #ai-chat-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 10%;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        #ai-chat-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        #ai-chat-window {
+            position: fixed;
+            bottom: 120px;
+            right: 10%;
+            width: 350px;
+            height: 500px;
+            display: none;
+            z-index: 1001;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+        }
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #007bff;
+        }
+        #contact .card {
+            border: none;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        #contact .form-control {
+            border-radius: 0;
+            border: 1px solid #ddd;
+        }
+        #contact .form-control:focus {
+            box-shadow: none;
+            border-color: #007bff;
+        }
+        #contact .btn-primary {
+            border-radius: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        #contact .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ccg的个人网站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">关于我</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">作品</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">联系</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero-section text-center" id="home">
+        <div class="container">
+            <h1 class="hero-title">欢迎来到Ccg的世界</h1>
+            <p class="hero-subtitle">探索、创新、分享</p>
+            <a href="#about" class="btn btn-light btn-lg">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 关于Ccg -->
+        <section id="about" class="my-5">
+            <h2 class="section-title">关于Ccg</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="./imgs/dcc0c1dd83123bb7e3f9a4a3fc678d87_r.jpg" class="img-fluid rounded" alt="Ccg照片">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Ccg是一位充满激情的软件开发者和创新者。专注于人工智能和Web开发，Ccg致力于将复杂的技术转化为简单易用的解决方案。在空闲时间，Ccg喜欢探索新技术，参与开源项目，以及通过博客分享技术见解。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品展示 -->
+        <section id="portfolio" class="my-5">
+            <h2 class="section-title">作品</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-robot fa-4x mb-3 text-primary"></i>
+                            <h5 class="card-title">AI聊天机器人</h5>
+                            <p class="card-text">基于最新NLP技术开发的智能对话系统。</p>
+                            <a href="#" class="btn btn-outline-primary">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-bar fa-4x mb-3 text-success"></i>
+                            <h5 class="card-title">数据可视化平台</h5>
+                            <p class="card-text">直观展示复杂数据的Web应用。</p>
+                            <a href="#" class="btn btn-outline-success">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-home fa-4x mb-3 text-warning"></i>
+                            <h5 class="card-title">智能家居控制系统</h5>
+                            <p class="card-text">结合IoT技术的智能家居解决方案。</p>
+                            <a href="#" class="btn btn-outline-warning">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系信息 -->
+        <section id="contact" class="my-5">
+            <h2 class="section-title">联系我</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="name" placeholder="您的姓名" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" id="email" placeholder="您的邮箱" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="subject" placeholder="主题" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="message" rows="4" placeholder="您的消息" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary px-4">发送消息</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- AI聊天图标 -->
+    <button id="ai-chat-icon" class="btn btn-primary rounded-circle">
+        <i class="fas fa-robot fa-2x"></i>
+    </button>
+
+    <!-- AI聊天窗口 -->
+    <div id="ai-chat-window" class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Ccg AI助手</h5>
+            <button id="close-chat" class="btn-close btn-close-white"></button>
+        </div>
+        <div id="chat-messages" class="card-body" style="height: 350px; overflow-y: auto;"></div>
+        <div class="card-footer">
+            <div class="input-group">
+                <input type="text" id="user-input" class="form-control" placeholder="输入您的问题...">
+                <button id="send-button" class="btn btn-primary">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="mb-4">
+                <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-weibo"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.bilibili.com/" class="social-icon" target="_blank"><i class="fab fa-bilibili"></i></a>
+            </div>
+            <p>&copy; 2023 Ccg的个人网站. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.5.1/jsrsasign-all-min.js"></script>
+    <script>
+        // AI聊天功能
+        const aiChatIcon = document.getElementById('ai-chat-icon');
+        const aiChatWindow = document.getElementById('ai-chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        aiChatIcon.addEventListener('click', () => {
+            if (aiChatWindow.style.display === 'none' || aiChatWindow.style.display === '') {
+                aiChatWindow.style.display = 'block';
+            } else {
+                aiChatWindow.style.display = 'none';
+            }
+        });
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // 添加生成JWT token的函数
+        function generateToken(apiKey, expSeconds) {
+            const [id, secret] = apiKey.split('.');
+            const header = {alg: 'HS256', sign_type: 'SIGN'};
+            const payload = {
+                api_key: id,
+                exp: Math.floor(Date.now() / 1000) + expSeconds,
+                timestamp: Math.floor(Date.now() / 1000)
+            };
+            return KJUR.jws.JWS.sign('HS256', JSON.stringify(header), JSON.stringify(payload), secret);
+        }
+
+        // 修改sendMessage函数
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage('user', message);
+                userInput.value = '';
+
+                // 使用提供的API Key
+                const apiKey = '42a6c609e36218ce8f262517794a9f6b.8DQXQGjG78T74gHV';
+                const token = generateToken(apiKey, 3600); // Token有效期1小时
+
+                try {
+                    const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            model: 'glm-4',
+                            messages: [
+                                {role: 'user', content: message}
+                            ]
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    const aiReply = data.choices[0].message.content;
+                    addMessage('ai', aiReply);
+                } catch (error) {
+                    console.error('Error:', error);
+                    addMessage('ai', '抱歉，我遇到了一些问题。请稍后再试。');
+                }
+            }
+        }
+
+        function addMessage(sender, text) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(sender === 'user' ? 'text-end' : 'text-start');
+            messageElement.innerHTML = `<p class="px-3 py-2 my-1 rounded ${sender === 'user' ? 'bg-primary text-white' : 'bg-light'}">${text}</p>`;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // 添加关闭按钮的功能
+        document.getElementById('close-chat').addEventListener('click', () => {
+            aiChatWindow.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
